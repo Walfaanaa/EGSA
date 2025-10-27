@@ -60,6 +60,25 @@ with col3:
     st.write("Enjoy bonuses and opportunities as the company grows.")
 
 # -------------------------------
+# Incentive Program for Member Recruitment
+# -------------------------------
+st.header("🌟 Incentive Program for Member Recruitment")
+st.markdown("""
+EGSA encourages active engagement and growth among its members. To promote meaningful participation, any member who successfully recruits more than one new member to EGSA shall be eligible for the following benefits:
+
+**1. Preferential Loan Terms:**  
+The member may access loans at a reduced interest rate, providing financial support under more favorable conditions.
+
+**2. Performance-Based Rewards:**  
+The member shall receive a reward at the conclusion of the fiscal year in recognition of their contribution to the organization’s growth.
+
+**3. Official Recognition:**  
+The member shall be awarded a certificate of recognition from EGSA, formally acknowledging their efforts in expanding the membership base.
+
+This initiative aims to foster a culture of active participation, meaningful contribution, and appreciation among all EGSA members.
+""")
+
+# -------------------------------
 # How EGSA Works
 # -------------------------------
 st.header("How EGSA2025 Works")
