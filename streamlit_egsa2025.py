@@ -27,7 +27,8 @@ st.markdown(
 # -------------------------------
 st.header("About EGSA2025")
 st.markdown("""
-EGSA2025 PLC is a modern member-based platform that brings together individuals to **grow together, access loans, and benefit from shared opportunities**.  
+EGSA2025 PLC is a modern member-based platform that brings together individuals to 
+**grow together, access loans, and benefit from shared opportunities**.  
 
 **Our Mission:**  
 - Provide accessible and fair opportunities for our members.  
@@ -36,6 +37,35 @@ EGSA2025 PLC is a modern member-based platform that brings together individuals 
 
 **Our Vision:**  
 To be the leading platform for financial empowerment among the new generation.
+""")
+
+# -------------------------------
+# EGSA Financial Strategy & Investment Principle
+# -------------------------------
+st.header("📘 EGSA Financial Strategy & Investment Principle")
+st.markdown("""
+The principle guiding financially successful institutions is the use of structured systems 
+rather than emotional or spontaneous decision-making. In alignment with this philosophy,  
+EGSA has adopted a system-driven approach as the foundation for its present and future operations.  
+Building a strong internal financial system is therefore considered the most effective strategy 
+for ensuring long-term organizational growth and stability.
+
+A central component of this system is the investment-focused financial principle. Sustainable 
+wealth is generated not merely through saving but through **strategic investment**. Savings 
+provide security, whereas investments drive expansion and long-term value creation.
+
+Following this ideology, EGSA implements a disciplined financial allocation structure:
+
+- **80% of funds allocated to investment**, ensuring that the majority of resources 
+  generate continuous growth and future income.  
+- **20% reserved for savings and emergency needs**, protecting the organization from 
+  unexpected financial challenges.  
+- **0% allocated to waste or non-productive expenses**, ensuring complete efficiency 
+  and accountability.
+
+Through consistent application of this system, EGSA positions itself as a forward-looking, 
+investment-oriented organization committed to strengthening its financial capacity, 
+expanding wealth, and securing sustainable benefits for all members.
 """)
 
 # -------------------------------
@@ -60,22 +90,23 @@ with col3:
     st.write("Enjoy bonuses and opportunities as the company grows.")
 
 # -------------------------------
-# Incentive Program for Member Recruitment
+# Incentive Program
 # -------------------------------
 st.header("🌟 Incentive Program for Member Recruitment")
 st.markdown("""
-EGSA encourages active engagement and growth among its members. To promote meaningful participation, any member who successfully recruits more than one new member to EGSA shall be eligible for the following benefits:
+EGSA encourages active engagement and growth among its members. To promote meaningful participation, 
+any member who successfully recruits more than one new member shall be eligible for the following benefits:
 
 **1. Preferential Loan Terms:**  
-The member may access loans at a reduced interest rate, providing financial support under more favorable conditions.
+Access loans at reduced interest rates.
 
 **2. Performance-Based Rewards:**  
-The member shall receive a reward at the conclusion of the fiscal year in recognition of their contribution to the organization’s growth.
+Receive an annual reward for contributing to organizational growth.
 
 **3. Official Recognition:**  
-The member shall be awarded a certificate of recognition from EGSA, formally acknowledging their efforts in expanding the membership base.
+Receive a certificate of recognition for expanding the membership base.
 
-This initiative aims to foster a culture of active participation, meaningful contribution, and appreciation among all EGSA members.
+This initiative fosters a culture of participation, contribution, and appreciation.
 """)
 
 # -------------------------------
@@ -84,9 +115,9 @@ This initiative aims to foster a culture of active participation, meaningful con
 st.header("How EGSA2025 Works")
 st.markdown("""
 1. Members contribute regularly to the community pool.  
-2. Members can request loans based on their participation.  
+2. Members may request loans based on their participation and contributions.  
 3. EGSA generates growth opportunities and shares benefits with its members.  
-4. Occasional additional contributions help the community grow even faster.  
+4. Occasional additional contributions help accelerate community growth.  
 """)
 
 # -------------------------------
