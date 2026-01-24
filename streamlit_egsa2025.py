@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 
 # ==========================
-# Page Setup
+# PAGE SETUP
 # ==========================
 st.set_page_config(
     page_title="EGSA2025 PLC",
@@ -48,6 +48,18 @@ if page == "🏠 Home":
         "<h4 style='text-align: center;'>Empowering the New Generation of Investors</h4>",
         unsafe_allow_html=True
     )
+
+    st.markdown("---")
+
+    # --- Introduction Section ---
+    st.markdown(
+        '<span style="color:blue; font-weight:bold; font-size:22px;">INTRODUCTION</span>',
+        unsafe_allow_html=True
+    )
+    st.write("""
+    EGSA2025 is built by members who take initiative, lead with integrity, and focus on effort rather than immediate results. 
+    This handbook is a guide to empower every member to contribute meaningfully, inspire others, and grow personally and collectively.
+    """)
 
     st.markdown("---")
 
