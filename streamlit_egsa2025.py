@@ -5,8 +5,14 @@ import altair as alt
 # ==========================
 # Page Setup
 # ==========================
-st.set_page_config(page_title="EGSA2025 PLC", layout="wide")
+st.set_page_config(
+    page_title="EGSA2025 PLC",
+    layout="wide"
+)
 
+# ==========================
+# SIDEBAR NAVIGATION
+# ==========================
 st.sidebar.title("EGSA2025")
 page = st.sidebar.radio(
     "Navigate",
@@ -25,29 +31,42 @@ page = st.sidebar.radio(
 # ==========================
 if page == "🏠 Home":
 
-    col_logo, col_title = st.columns([1, 6])
-
-    with col_logo:
+    # --- Centered Logo ---
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
         st.image(
             "https://github.com/Walfaanaa/EGSA/blob/main/EGSA.png?raw=true",
-            width=90
+            use_container_width=True
         )
 
-    with col_title:
-        st.markdown("## Welcome to **EGSA2025 PLC**")
-        st.subheader("Empowering the New Generation of Investors")
-
-    st.image(
-        "https://github.com/Walfaanaa/EGSA/blob/main/EGSA%20Logo.png?raw=true",
-        width=500
+    # --- Centered Title ---
+    st.markdown(
+        "<h1 style='text-align: center;'>Welcome to <b>EGSA2025 PLC</b></h1>",
+        unsafe_allow_html=True
     )
+    st.markdown(
+        "<h4 style='text-align: center;'>Empowering the New Generation of Investors</h4>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown("---")
+
+    # --- Main Banner Image (Centered) ---
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/blob/main/EGSA%20Logo.png?raw=true",
+            use_container_width=True
+        )
 
     st.markdown("""
     **EGSA2025 PLC** is a member-based organization built on trust, discipline,
     and long-term financial growth.
 
-    We believe **systems matter more than emotions**
-    and **effort matters more than outcomes**.
+    We believe:
+
+    - **Systems matter more than emotions**
+    - **Effort matters more than outcomes**
     """)
 
 # ==========================
@@ -55,6 +74,7 @@ if page == "🏠 Home":
 # ==========================
 elif page == "📘 Financial Strategy":
     st.header("📘 EGSA Financial Strategy")
+
     st.markdown("""
     EGSA follows a **system-driven financial model**:
 
@@ -81,12 +101,16 @@ elif page == "🔑 Leadership Handbook":
             "Impact": [1, 4, 8]
         })
 
-        st.altair_chart(
+        chart = (
             alt.Chart(data)
             .mark_bar()
-            .encode(x="Action", y="Impact"),
-            use_container_width=True
+            .encode(
+                x="Action",
+                y="Impact"
+            )
         )
+
+        st.altair_chart(chart, use_container_width=True)
 
 # ==========================
 # MEMBER BENEFITS
@@ -112,6 +136,8 @@ elif page == "🤝 Member Benefits":
 # HOW IT WORKS
 # ==========================
 elif page == "⚙️ How It Works":
+    st.header("⚙️ How EGSA2025 Works")
+
     st.markdown("""
     1. Members contribute regularly  
     2. Funds are invested systematically  
@@ -120,13 +146,13 @@ elif page == "⚙️ How It Works":
     """)
 
 # ==========================
-# JOIN
+# JOIN EGSA2025
 # ==========================
 elif page == "📩 Join EGSA2025":
     st.header("Become a Member")
 
     st.markdown("""
-    📞 **Phone:** +251912861288  
+    📞 **Phone:** +251 912 861 288  
     📧 **Email:** walfanamegersa3@gmail.com
     """)
 
