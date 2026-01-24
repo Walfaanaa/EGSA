@@ -1,145 +1,124 @@
-# streamlit_egsa2025_ad.py
-# EGSA2025 PLC - Streamlit Advertisement / Information Page
-
 import streamlit as st
+import pandas as pd
+import altair as alt
 
-# -------------------------------
+# ==========================
 # Page Setup
-# -------------------------------
+# ==========================
 st.set_page_config(page_title="EGSA2025 PLC", layout="wide")
-st.title("🌟 Welcome to EGSA2025 PLC")
-st.subheader("Empowering the New Generation of Investors")
 
-# -------------------------------
-# Hero Image / Banner (Using EGSA Logo)
-# -------------------------------
-st.markdown(
-    """
-    <div style="text-align:center;">
-        <img src="https://github.com/Walfaanaa/EGSA/blob/main/EGSA%20Logo.png?raw=true" width="600">
-    </div>
-    """,
-    unsafe_allow_html=True
+st.sidebar.title("EGSA2025")
+page = st.sidebar.radio(
+    "Navigate",
+    [
+        "🏠 Home",
+        "📘 Financial Strategy",
+        "🔑 Leadership Handbook",
+        "🤝 Member Benefits",
+        "⚙️ How It Works",
+        "📩 Join EGSA2025"
+    ]
 )
 
-# -------------------------------
-# About EGSA2025
-# -------------------------------
-st.header("About EGSA2025")
-st.markdown("""
-EGSA2025 PLC is a modern member-based platform that brings together individuals to 
-**grow together, access loans, and benefit from shared opportunities**.  
+# ==========================
+# HOME
+# ==========================
+if page == "🏠 Home":
+    st.title("🌟 Welcome to EGSA2025 PLC")
+    st.subheader("Empowering the New Generation of Investors")
 
-**Our Mission:**  
-- Provide accessible and fair opportunities for our members.  
-- Foster a strong, engaged financial community.  
-- Build sustainable growth and value for everyone involved.  
+    st.image(
+        "https://github.com/Walfaanaa/EGSA/blob/main/EGSA%20Logo.png?raw=true",
+        width=500
+    )
 
-**Our Vision:**  
-To be the leading platform for financial empowerment among the new generation.
-""")
+    st.markdown("""
+    **EGSA2025 PLC** is a member-based organization built on trust, discipline, 
+    and long-term financial growth.
 
-# -------------------------------
-# EGSA Financial Strategy & Investment Principle
-# -------------------------------
-st.header("📘 EGSA Financial Strategy & Investment Principle")
-st.markdown("""
-The principle guiding financially successful institutions is the use of structured systems 
-rather than emotional or spontaneous decision-making. In alignment with this philosophy,  
-EGSA has adopted a system-driven approach as the foundation for its present and future operations.  
-Building a strong internal financial system is therefore considered the most effective strategy 
-for ensuring long-term organizational growth and stability.
+    We believe **systems matter more than emotions** and **effort matters more than outcomes**.
+    """)
 
-A central component of this system is the investment-focused financial principle. Sustainable 
-wealth is generated not merely through saving but through **strategic investment**. Savings 
-provide security, whereas investments drive expansion and long-term value creation.
+# ==========================
+# FINANCIAL STRATEGY
+# ==========================
+elif page == "📘 Financial Strategy":
+    st.header("📘 EGSA Financial Strategy")
 
-Following this ideology, EGSA implements a disciplined financial allocation structure:
+    st.markdown("""
+    EGSA follows a **system-driven financial model**:
 
-- **80% of funds allocated to investment**, ensuring that the majority of resources 
-  generate continuous growth and future income.  
-- **20% reserved for savings and emergency needs**, protecting the organization from 
-  unexpected financial challenges.  
-- **0% allocated to waste or non-productive expenses**, ensuring complete efficiency 
-  and accountability.
+    - **80% Investment** → Growth & wealth creation  
+    - **20% Savings** → Security & stability  
+    - **0% Waste** → Discipline & accountability  
+    """)
 
-Through consistent application of this system, EGSA positions itself as a forward-looking, 
-investment-oriented organization committed to strengthening its financial capacity, 
-expanding wealth, and securing sustainable benefits for all members.
-""")
+# ==========================
+# LEADERSHIP HANDBOOK
+# ==========================
+elif page == "🔑 Leadership Handbook":
+    st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
 
-# -------------------------------
-# Member Benefits
-# -------------------------------
-st.header("Why Join EGSA2025?")
-col1, col2, col3 = st.columns(3)
+    with st.expander("Chapter 1: Initiative Is Leadership"):
+        st.write("Leadership begins with action, not permission.")
 
-with col1:
-    st.image("https://via.placeholder.com/100.png?text=Membership", width=100)
-    st.subheader("Exclusive Membership")
-    st.write("Join a growing community of active and engaged members.")
+    with st.expander("Chapter 2: Responsibility Without Authority"):
+        st.write("Ownership is a mindset, not a title.")
 
-with col2:
-    st.image("https://via.placeholder.com/100.png?text=Loan", width=100)
-    st.subheader("Access to Loans")
-    st.write("Members can access fair and flexible loans from our pooled resources.")
+    with st.expander("Chapter 3: Small Keys Open Big Doors"):
+        data = pd.DataFrame({
+            "Action": ["Small", "Consistent", "Collective"],
+            "Impact": [1, 4, 8]
+        })
+        st.altair_chart(
+            alt.Chart(data).mark_bar().encode(
+                x="Action",
+                y="Impact"
+            ),
+            use_container_width=True
+        )
 
-with col3:
-    st.image("https://via.placeholder.com/100.png?text=Growth", width=100)
-    st.subheader("Shared Benefits")
-    st.write("Enjoy bonuses and opportunities as the company grows.")
+# ==========================
+# MEMBER BENEFITS
+# ==========================
+elif page == "🤝 Member Benefits":
+    st.header("Why Join EGSA2025?")
 
-# -------------------------------
-# Incentive Program
-# -------------------------------
-st.header("🌟 Incentive Program for Member Recruitment")
-st.markdown("""
-EGSA encourages active engagement and growth among its members. To promote meaningful participation, 
-any member who successfully recruits more than one new member shall be eligible for the following benefits:
+    col1, col2, col3 = st.columns(3)
 
-**1. Preferential Loan Terms:**  
-Access loans at reduced interest rates.
+    with col1:
+        st.subheader("🤝 Community")
+        st.write("Strong, trusted membership")
 
-**2. Performance-Based Rewards:**  
-Receive an annual reward for contributing to organizational growth.
+    with col2:
+        st.subheader("💰 Fair Loans")
+        st.write("Access flexible and fair financing")
 
-**3. Official Recognition:**  
-Receive a certificate of recognition for expanding the membership base.
+    with col3:
+        st.subheader("📈 Shared Growth")
+        st.write("Benefit as EGSA grows")
 
-This initiative fosters a culture of participation, contribution, and appreciation.
-""")
+# ==========================
+# HOW IT WORKS
+# ==========================
+elif page == "⚙️ How It Works":
+    st.markdown("""
+    1. Members contribute regularly  
+    2. Funds are invested systematically  
+    3. Members access loans  
+    4. Benefits are shared fairly  
+    """)
 
-# -------------------------------
-# How EGSA Works
-# -------------------------------
-st.header("How EGSA2025 Works")
-st.markdown("""
-1. Members contribute regularly to the community pool.  
-2. Members may request loans based on their participation and contributions.  
-3. EGSA generates growth opportunities and shares benefits with its members.  
-4. Occasional additional contributions help accelerate community growth.  
-""")
+# ==========================
+# JOIN
+# ==========================
+elif page == "📩 Join EGSA2025":
+    st.header("Become a Member")
 
-# -------------------------------
-# Testimonials
-# -------------------------------
-st.header("What Our Members Say")
-st.markdown("""
-> "Joining EGSA2025 has allowed me to access loans quickly and grow my savings!" – *Member A*  
-> "I love being part of a community that truly benefits everyone." – *Member B*  
-> "Transparent, fair, and empowering. EGSA2025 is the future!" – *Member C*
-""")
+    st.markdown("""
+    📞 **Phone:** +251912861288  
+    📧 **Email:** walfanamegersa3@gmail.com  
+    """)
 
-# -------------------------------
-# Call to Action
-# -------------------------------
-st.header("Become a Member Today!")
-st.markdown("""
-📞 **Phone:** +251912861288  
-📧 **Email:** walfanamegersa3@gmail.com  
-
-Reach out to get more information and join our growing community!
-""")
-
-if st.button("📩 Contact Us / Join Now"):
-    st.success("Thank you for your interest! Please contact us via phone or email to join EGSA2025.")
+    if st.button("Join Now"):
+        st.success("Thank you! We will contact you soon.")
