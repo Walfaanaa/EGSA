@@ -16,16 +16,26 @@ page = st.sidebar.radio(
         "🔑 Leadership Handbook",
         "🤝 Member Benefits",
         "⚙️ How It Works",
-        "📩 Join EGSA2025"
-    ]
+        "📩 Join EGSA2025",
+    ],
 )
 
 # ==========================
 # HOME
 # ==========================
 if page == "🏠 Home":
-    st.title("🌟 Welcome to EGSA2025 PLC")
-    st.subheader("Empowering the New Generation of Investors")
+
+    col_logo, col_title = st.columns([1, 6])
+
+    with col_logo:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/blob/main/EGSA.png?raw=true",
+            width=90
+        )
+
+    with col_title:
+        st.markdown("## Welcome to **EGSA2025 PLC**")
+        st.subheader("Empowering the New Generation of Investors")
 
     st.image(
         "https://github.com/Walfaanaa/EGSA/blob/main/EGSA%20Logo.png?raw=true",
@@ -33,10 +43,11 @@ if page == "🏠 Home":
     )
 
     st.markdown("""
-    **EGSA2025 PLC** is a member-based organization built on trust, discipline, 
+    **EGSA2025 PLC** is a member-based organization built on trust, discipline,
     and long-term financial growth.
 
-    We believe **systems matter more than emotions** and **effort matters more than outcomes**.
+    We believe **systems matter more than emotions**
+    and **effort matters more than outcomes**.
     """)
 
 # ==========================
@@ -44,13 +55,12 @@ if page == "🏠 Home":
 # ==========================
 elif page == "📘 Financial Strategy":
     st.header("📘 EGSA Financial Strategy")
-
     st.markdown("""
     EGSA follows a **system-driven financial model**:
 
     - **80% Investment** → Growth & wealth creation  
     - **20% Savings** → Security & stability  
-    - **0% Waste** → Discipline & accountability  
+    - **0% Waste** → Discipline & accountability
     """)
 
 # ==========================
@@ -70,11 +80,11 @@ elif page == "🔑 Leadership Handbook":
             "Action": ["Small", "Consistent", "Collective"],
             "Impact": [1, 4, 8]
         })
+
         st.altair_chart(
-            alt.Chart(data).mark_bar().encode(
-                x="Action",
-                y="Impact"
-            ),
+            alt.Chart(data)
+            .mark_bar()
+            .encode(x="Action", y="Impact"),
             use_container_width=True
         )
 
@@ -106,7 +116,7 @@ elif page == "⚙️ How It Works":
     1. Members contribute regularly  
     2. Funds are invested systematically  
     3. Members access loans  
-    4. Benefits are shared fairly  
+    4. Benefits are shared fairly
     """)
 
 # ==========================
@@ -117,7 +127,7 @@ elif page == "📩 Join EGSA2025":
 
     st.markdown("""
     📞 **Phone:** +251912861288  
-    📧 **Email:** walfanamegersa3@gmail.com  
+    📧 **Email:** walfanamegersa3@gmail.com
     """)
 
     if st.button("Join Now"):
