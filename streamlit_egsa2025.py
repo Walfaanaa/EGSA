@@ -141,6 +141,16 @@ elif page == "🔑 Leadership Handbook":
 
         st.altair_chart(chart, use_container_width=True)
 
+    # --- New Chapters 4, 5, 6 ---
+    with st.expander("🔑 Chapter 4: Every Member Is a Key"):
+        st.write("Every role, no matter how small, matters. Identify how we can contribute uniquely to EGSA2025 and act consistently.")
+
+    with st.expander("🔑 Chapter 5: Collective Keys"):
+        st.write("Multiple keys working together open doors to bigger achievements. Collaboration amplifies impact and strengthens the organization.")
+
+    with st.expander("🔑 Chapter 6: Measuring What Matters"):
+        st.write("Impact is not only in numbers. Contributions, learning, trust, initiative, and collaboration are essential metrics for growth.")
+
 # ==========================
 # MEMBER BENEFITS
 # ==========================
