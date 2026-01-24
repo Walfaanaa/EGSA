@@ -63,6 +63,23 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
+    # --- Mission & Vision Section ---
+    st.markdown(
+        '<span style="color:green; font-weight:bold; font-size:22px;">OUR MISSION & VISION</span>',
+        unsafe_allow_html=True
+    )
+    st.markdown("""
+    **Our Mission:**  
+    - Provide accessible and fair opportunities for our members.  
+    - Foster a strong, engaged financial community.  
+    - Build sustainable growth and value for everyone involved.  
+
+    **Our Vision:**  
+    To be the leading platform for financial empowerment among the new generation.
+    """)
+
+    st.markdown("---")
+
     # --- Main Banner Image (Centered) ---
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
