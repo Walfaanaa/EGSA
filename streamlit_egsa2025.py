@@ -51,7 +51,26 @@ def display_centered_logo(width=150):
 # ---------- HOME ----------
 if page == "Home":
     display_centered_logo()
-    st.title("Welcome to EGSA2025")
+    st.markdown(
+        """
+        <h1 style="
+            text-align: center;
+            color: #16a34a;  /* Tailwind green-600 */
+            animation: fadeIn 2s ease-in-out infinite alternate;
+            font-family: Arial, sans-serif;
+        ">
+            Welcome to EGSA2025
+        </h1>
+
+        <style>
+        @keyframes fadeIn {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # ---------- FINANCIAL STRATEGY ----------
 elif page == "Financial Strategy":
@@ -236,3 +255,4 @@ You can join EGSA2025 or contact us via:
 **Phone:** +251912861288  
 **Email:** walfanamegersa3@gmail.com
 """)
+
