@@ -13,6 +13,10 @@ st.set_page_config(
 # ==========================
 # SIDEBAR NAVIGATION
 # ==========================
+st.sidebar.image(
+    "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
+    width=120
+)
 st.sidebar.title("EGSA2025")
 page = st.sidebar.radio(
     "Navigate",
@@ -20,6 +24,7 @@ page = st.sidebar.radio(
         "🏠 Home",
         "📘 Financial Strategy",
         "🔑 Leadership Handbook",
+        "📄 Strategic Action Plan",
         "🤝 Member Benefits",
         "⚙️ How It Works",
         "📩 Join EGSA2025",
@@ -30,11 +35,25 @@ page = st.sidebar.radio(
 # PAGES
 # ==========================
 if page == "🏠 Home":
-    st.title("🏠 Welcome to EGSA2025")
+    col1, col2, col3 = st.columns([1, 6, 1])
+    with col1:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
+            width=80
+        )
+    with col2:
+        st.title("🏠 Welcome to EGSA2025")
     st.write("Home Page Content Here")
 
 elif page == "🔑 Leadership Handbook":
-    st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
+    col1, col2 = st.columns([1, 6])
+    with col1:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
+            width=80
+        )
+    with col2:
+        st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
 
     with st.expander("Chapter 1: Initiative Is Leadership"):
         st.write("Leadership begins with action, not permission.")
@@ -72,3 +91,19 @@ elif page == "🔑 Leadership Handbook":
     with st.expander("Chapter 6: Measuring What Matters"):
         st.write("Impact is not only in numbers. Contributions, learning, trust, initiative, and collaboration are essential metrics for growth.")
         st.write("ተፅዕኖ ቁጥር ብቻ አይደለም። እርምጃዎች፣ ትምህርት፣ እምነት፣ ተነሳሽነት፣ እና መተባበር ለእድገት አስፈላጊ መለኪያዎች ናቸው።")
+
+elif page == "📄 Strategic Action Plan":
+    col1, col2 = st.columns([1, 6])
+    with col1:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
+            width=80
+        )
+    with col2:
+        st.title("📄 EGSA Internal Strategic Action Plan (2025–2027)")
+
+    with st.expander("Executive Summary"):
+        st.write("""
+The Economic Growth Solution Association (EGSA) is a member-based organization dedicated to promoting sustainable economic empowerment through savings, loans, and community-driven investments. 
+EGSA aims to be a holistic solution hub for Ethiopia, addressing critical sectors such as education, health, transportation, agriculture, housing, and economic development, while empowering members economically. 
+This strategic action plan outlines a roadmap for growth, digital transformation, and multi-sec
