@@ -36,7 +36,7 @@ page = st.sidebar.radio(
 # ==========================
 # CENTERED LOGO FUNCTION
 # ==========================
-def display_centered_logo(width=150):
+def display_centered_logo(width=250):
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.image(
@@ -257,5 +257,6 @@ You can join EGSA2025 or contact us via:
 **Phone:** +251912861288  
 **Email:** walfanamegersa3@gmail.com
 """)
+
 
 
