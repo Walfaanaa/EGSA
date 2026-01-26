@@ -199,13 +199,32 @@ commitment, transparency, and continuous innovation across all levels of the ass
 elif page == "Member Benefits":
     display_centered_logo()
     st.title("🤝 Member Benefits")
-    st.write("Member Benefits Content Here")
+    st.write("""
+EGSA members enjoy the following benefits:
+
+- **Savings & Loans Access** – Participate in digital savings programs and access low-interest loans.
+- **Investment Opportunities** – Join community-based investment projects and profit-sharing schemes.
+- **Skill Development** – Receive training in entrepreneurship, agriculture, finance, and digital tools.
+- **Networking & Collaboration** – Connect with like-minded members and local development partners.
+- **Financial Inclusion** – Benefit from Uqub and other community-based financial innovations.
+- **Social Impact Participation** – Contribute to projects in education, health, housing, and agriculture.
+""")
 
 # ---------- HOW IT WORKS ----------
 elif page == "How It Works":
     display_centered_logo()
     st.title("⚙️ How It Works")
-    st.write("How It Works Content Here")
+    st.write("""
+EGSA operates through a simple, member-driven process:
+
+1. **Join EGSA** – Become a registered member via digital registration.
+2. **Contribute Savings** – Participate in monthly, quarterly, and Uqub contributions.
+3. **Access Services** – Use savings for loans, micro-investments, or community projects.
+4. **Participate in Training** – Enhance your skills through workshops, mentorship, and digital courses.
+5. **Engage in Community Projects** – Invest in local development initiatives like housing, agriculture, or education.
+6. **Track Impact** – Members can monitor their contributions and participation through the EGSA digital dashboard.
+7. **Grow Together** – Collective action and shared responsibility ensure sustainable growth and benefits for all members.
+""")
 
 # ---------- JOIN EGSA2025 ----------
 elif page == "Join EGSA2025":
