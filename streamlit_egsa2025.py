@@ -11,51 +11,59 @@ st.set_page_config(
 )
 
 # ==========================
-# SIDEBAR NAVIGATION
+# SIDEBAR WITH LOGO
 # ==========================
 st.sidebar.image(
     "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
     width=120
 )
 st.sidebar.title("EGSA2025")
+
+# Sidebar menu
 page = st.sidebar.radio(
     "Navigate",
     [
-        "🏠 Home",
-        "📘 Financial Strategy",
-        "🔑 Leadership Handbook",
-        "📄 Strategic Action Plan",
-        "🤝 Member Benefits",
-        "⚙️ How It Works",
-        "📩 Join EGSA2025",
-    ],
+        "Home",
+        "Financial Strategy",
+        "Leadership Handbook",
+        "Strategic Action Plan",
+        "Member Benefits",
+        "How It Works",
+        "Join EGSA2025"
+    ]
 )
+
+# ==========================
+# CENTERED LOGO FUNCTION
+# ==========================
+def display_centered_logo(width=150):
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image(
+            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
+            width=width
+        )
 
 # ==========================
 # PAGES
 # ==========================
+
 # ---------- HOME ----------
-if page == "🏠 Home":
-    col1, col2, col3 = st.columns([1, 6, 1])
-    with col1:
-        st.image(
-            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
-            width=80
-        )
-    with col2:
-        st.title("🏠 Welcome to EGSA2025")
+if page == "Home":
+    display_centered_logo()
+    st.title("🏠 Welcome to EGSA2025")
     st.write("Home Page Content Here")
 
+# ---------- FINANCIAL STRATEGY ----------
+elif page == "Financial Strategy":
+    display_centered_logo()
+    st.title("📘 Financial Strategy")
+    st.write("Financial Strategy Content Here")
+
 # ---------- LEADERSHIP HANDBOOK ----------
-elif page == "🔑 Leadership Handbook":
-    col1, col2 = st.columns([1, 6])
-    with col1:
-        st.image(
-            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
-            width=80
-        )
-    with col2:
-        st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
+elif page == "Leadership Handbook":
+    display_centered_logo()
+    st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
 
     with st.expander("Chapter 1: Initiative Is Leadership"):
         st.write(
@@ -107,15 +115,9 @@ elif page == "🔑 Leadership Handbook":
         )
 
 # ---------- STRATEGIC ACTION PLAN ----------
-elif page == "📄 Strategic Action Plan":
-    col1, col2 = st.columns([1, 6])
-    with col1:
-        st.image(
-            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
-            width=80
-        )
-    with col2:
-        st.title("📄 EGSA Internal Strategic Action Plan (2025–2027)")
+elif page == "Strategic Action Plan":
+    display_centered_logo()
+    st.title("📄 EGSA Internal Strategic Action Plan (2025–2027)")
 
     with st.expander("Executive Summary"):
         st.write(
@@ -211,3 +213,21 @@ elif page == "📄 Strategic Action Plan":
             "and sustainable multi-sector community impact. By integrating modern financial tools, traditional uqub practices, "
             "and targeted sectoral interventions, EGSA is positioned to become a national solution hub addressing Ethiopia’s most critical challenges."
         )
+
+# ---------- MEMBER BENEFITS ----------
+elif page == "Member Benefits":
+    display_centered_logo()
+    st.title("🤝 Member Benefits")
+    st.write("Member Benefits Content Here")
+
+# ---------- HOW IT WORKS ----------
+elif page == "How It Works":
+    display_centered_logo()
+    st.title("⚙️ How It Works")
+    st.write("How It Works Content Here")
+
+# ---------- JOIN EGSA2025 ----------
+elif page == "Join EGSA2025":
+    display_centered_logo()
+    st.title("📩 Join EGSA2025")
+    st.write("Join EGSA2025 Content Here")
