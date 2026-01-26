@@ -51,30 +51,19 @@ def display_centered_logo(width=150):
 # ---------- HOME ----------
 if page == "Home":
     display_centered_logo()
-    st.title("🏠 Welcome to EGSA2025")
-    st.write("Home Page Content Here")
+    st.title("Welcome to EGSA2025")
 
 # ---------- FINANCIAL STRATEGY ----------
 elif page == "Financial Strategy":
     display_centered_logo()
     st.title("📘 Financial Strategy")
-
-    st.write(
-        "EGSA2025 tracks key financial activities to ensure transparency, growth, and member empowerment. "
-        "The main financial indicators include:"
-    )
-
-    # Display highlighted points without values
-    st.markdown("### Key Financial Metrics")
-    st.markdown("- **Monthly Contributions** – Amount each member contributes every month.")
-    st.markdown("- **Quarterly Contributions** – Aggregated contributions for each quarter.")
-    st.markdown("- **Service Charges Collected** – Fees collected for services provided by EGSA.")
-    st.markdown("- **Uqub Pick Sold** – Income from rotating savings groups or uqub activities.")
-    st.markdown("- **Grain Buy and Sell Profit** – Earnings from trading grain or agricultural products.")
-
-    st.write(
-        "Tracking these indicators helps EGSA plan finances, reward members, and make informed investment decisions."
-    )
+    st.write("""
+- Monthly Contribution  
+- Quarterly Contribution  
+- Service Charge Collected  
+- Uqub Pick Sold  
+- Grain Buy and Sell Profit
+""")
 
 # ---------- LEADERSHIP HANDBOOK ----------
 elif page == "Leadership Handbook":
@@ -135,7 +124,76 @@ elif page == "Strategic Action Plan":
     display_centered_logo()
     st.title("📄 EGSA Internal Strategic Action Plan (2025–2027)")
 
-    # Expanders for content as before...
+    st.markdown("**Prepared by:** Founder & Executive Director  \n**Location:** Sheger City  \n**Date:** October 31, 2025")
+
+    with st.expander("Executive Summary"):
+        st.write(
+            """The Economic Growth Solution Association (EGSA) is a member-based organization 
+dedicated to promoting sustainable economic empowerment through savings, loans, 
+and community-driven investments. This internal strategic action plan outlines a 
+roadmap for growth and digital transformation between 2025 and 2027."""
+        )
+
+    with st.expander("Vision"):
+        st.write(
+            """To be a model cooperative using digital innovation and community capital 
+to build sustainable economic independence for members."""
+        )
+
+    with st.expander("Mission"):
+        st.write(
+            """To empower members economically through savings mobilization, investment in local opportunities, 
+digital solutions, and continuous capacity building."""
+        )
+
+    with st.expander("Core Values"):
+        st.write(
+            """- **Integrity** – ensuring transparency and accountability in all operations.
+- **Innovation** – embracing digital and financial technologies for growth.
+- **Teamwork** – collective action and shared ownership among members.
+- **Empowerment** – enhancing skills and opportunities for economic advancement.
+- **Sustainability** – promoting long-term social and financial resilience."""
+        )
+
+    with st.expander("Strategic Objectives (2025–2027)"):
+        st.write(
+            """1. Build a fully digital cooperative management system for EGSA operations.
+2. Diversify investments into profitable and low-risk local enterprises.
+3. Strengthen member skills and entrepreneurship through training and mentorship.
+4. Establish EGSA as a trusted brand recognized for transparency and innovation.
+5. Expand partnerships with local government, financial institutions, and development partners."""
+        )
+
+    with st.expander("Implementation Framework"):
+        st.write(
+            """The implementation will be phased over three years to ensure sustainable rollout and impact.
+
+**Phase 1 (0–6 months):** Digitalization & Branding – EGSA App launched, digital member registration, improved transparency.
+**Phase 2 (6–12 months):** Financial Expansion – Micro-investment fund established, 40% growth in member assets.
+**Phase 3 (Year 2):** Skill & Investment Growth – Business training center operational, active partnerships with SMEs.
+**Phase 4 (Year 3):** Scaling & Replication – Regional expansion, stronger brand recognition, external investment attraction."""
+        )
+
+    with st.expander("Unique Strategy: Digital Cooperative Capitalization (DCC)"):
+        st.write(
+            """EGSA introduces the 'Digital Cooperative Capitalization' model, where each member contributes 
+not only financially but also through participation data, training engagement, and transaction activity. 
+This creates a Digital Capital Index (DCI) that measures each member’s economic contribution and reliability. 
+The DCI can be used internally to guide loan access and externally to attract partnerships and funding."""
+        )
+
+    with st.expander("Monitoring and Evaluation"):
+        st.write(
+            """EGSA will track performance through quarterly reviews, annual reports, and a centralized digital dashboard. 
+Key indicators include member growth, capital increase, investment return rates, and training participation."""
+        )
+
+    with st.expander("Conclusion"):
+        st.write(
+            """This internal strategic action plan provides EGSA with a clear roadmap for achieving economic growth, 
+digital transformation, and sustainable community impact. Effective implementation will require 
+commitment, transparency, and continuous innovation across all levels of the association."""
+        )
 
 # ---------- MEMBER BENEFITS ----------
 elif page == "Member Benefits":
@@ -153,4 +211,9 @@ elif page == "How It Works":
 elif page == "Join EGSA2025":
     display_centered_logo()
     st.title("📩 Join EGSA2025")
-    st.write("Join EGSA2025 Content Here")
+    st.write("""
+You can join EGSA2025 or contact us via:  
+
+**Phone:** +251912861288  
+**Email:** walfanamegersa3@gmail.com
+""")
