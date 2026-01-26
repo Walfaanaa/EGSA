@@ -44,28 +44,30 @@ def display_centered_logo(width=150):
             width=width
         )
 
-# ==========================
-# PAGES
-# ==========================
-
 # ---------- HOME ----------
 if page == "Home":
-    display_centered_logo()
+    # Increase the logo size
+    display_centered_logo(width=250)
+
+    # Animated welcome text with color change every 10s
     st.markdown(
         """
         <h1 style="
             text-align: center;
-            color: #16a34a;  /* Tailwind green-600 */
-            animation: fadeIn 2s ease-in-out infinite alternate;
             font-family: Arial, sans-serif;
+            font-size: 50px;
+            animation: colorChange 10s infinite;
         ">
             Welcome to EGSA2025
         </h1>
 
         <style>
-        @keyframes fadeIn {
-            0% { opacity: 0.2; }
-            100% { opacity: 1; }
+        @keyframes colorChange {
+            0% { color: #16a34a; }   /* Green */
+            25% { color: #2563eb; }  /* Blue */
+            50% { color: #f59e0b; }  /* Orange */
+            75% { color: #d946ef; }  /* Purple */
+            100% { color: #16a34a; } /* Back to Green */
         }
         </style>
         """,
@@ -255,4 +257,5 @@ You can join EGSA2025 or contact us via:
 **Phone:** +251912861288  
 **Email:** walfanamegersa3@gmail.com
 """)
+
 
