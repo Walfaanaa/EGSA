@@ -1,23 +1,42 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import time
 
 # ==========================
 # PAGE SETUP
 # ==========================
-st.set_page_config(
-    page_title="EGSA2025 PLC",
-    layout="wide"
-)
+st.set_page_config(page_title="EGSA2025 PLC", layout="wide")
+
+LOGO_URL = "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png"
+AUDIO_URL = "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"  # Replace later with your EGSA audio
+
 
 # ==========================
-# SIDEBAR WITH LOGO
+# SIDEBAR WITH ANIMATED LOGO
 # ==========================
-st.sidebar.image(
-    "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
-    width=120
+st.sidebar.markdown(
+    f"""
+    <div style="text-align:center; padding-top:10px;">
+        <img src="{LOGO_URL}" width="120"
+        style="
+            border-radius: 50%;
+            animation: spinGlow 4s linear infinite;
+            box-shadow: 0px 0px 15px rgba(34,197,94,0.8);
+        ">
+        <h2 style="color:#16a34a; margin-top:10px;">EGSA2025</h2>
+    </div>
+
+    <style>
+    @keyframes spinGlow {{
+        0%   {{ transform: rotate(0deg) scale(1);   filter: brightness(1); }}
+        50%  {{ transform: rotate(180deg) scale(1.08); filter: brightness(1.3); }}
+        100% {{ transform: rotate(360deg) scale(1); filter: brightness(1); }}
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
 )
-st.sidebar.title("EGSA2025")
 
 # Sidebar menu
 page = st.sidebar.radio(
@@ -33,23 +52,113 @@ page = st.sidebar.radio(
     ]
 )
 
+
 # ==========================
-# CENTERED LOGO FUNCTION
+# CENTERED ANIMATED LOGO
 # ==========================
-def display_centered_logo(width=250):
+def display_centered_animated_logo(width=250):
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.image(
-            "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png",
-            width=width
+        st.markdown(
+            f"""
+            <div style="text-align:center;">
+                <img src="{LOGO_URL}" width="{width}"
+                style="
+                    border-radius: 20px;
+                    animation: bounceZoom 2.5s ease-in-out infinite;
+                    box-shadow: 0px 0px 25px rgba(217,70,239,0.7);
+                ">
+            </div>
+
+            <style>
+            @keyframes bounceZoom {{
+                0%   {{ transform: translateY(0px) scale(1); }}
+                25%  {{ transform: translateY(-10px) scale(1.03); }}
+                50%  {{ transform: translateY(0px) scale(1.06); }}
+                75%  {{ transform: translateY(-10px) scale(1.03); }}
+                100% {{ transform: translateY(0px) scale(1); }}
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
         )
 
-# ---------- HOME ----------
-if page == "Home":
-    # Increase the logo size
-    display_centered_logo(width=250)
 
-    # Animated welcome text with color change every 10s
+# ==========================
+# INTRO TEXT PART BY PART
+# ==========================
+def egsa_intro_text_part_by_part(speed=2.5):
+    lines = [
+        "🎉 Welcome to EGSA2025!",
+        "🌍 Economic Growth Solution Association",
+        "💰 We build savings, loans, and investment opportunities for members.",
+        "🤝 Together we grow stronger through unity and trust.",
+        "📈 EGSA2025 is a digital cooperative for sustainable economic success.",
+        "✅ Thank you for being part of EGSA2025!"
+    ]
+
+    placeholder = st.empty()
+
+    for line in lines:
+        placeholder.markdown(
+            f"""
+            <div style="
+                text-align:center;
+                font-size:38px;
+                font-weight:bold;
+                font-family:Arial;
+                color:#16a34a;
+                animation: fadeIn 1s ease-in-out;
+                padding:18px;
+            ">
+                {line}
+            </div>
+
+            <style>
+            @keyframes fadeIn {{
+                0%   {{opacity:0; transform:translateY(10px);}}
+                100% {{opacity:1; transform:translateY(0px);}}
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        time.sleep(speed)
+
+
+# ==========================
+# GLOBAL INTRO (SHOW ON ALL PAGES)
+# ==========================
+def show_global_intro():
+    st.markdown(
+        "<h2 style='text-align:center; color:#2563eb;'>🎬 EGSA2025 Intro</h2>",
+        unsafe_allow_html=True
+    )
+
+    # 🎵 Audio player
+    st.audio(AUDIO_URL)
+
+    # Speed control (optional)
+    speed = st.slider("⏱️ Text Speed (seconds per line)", 1.0, 5.0, 2.5, 0.5)
+
+    # ▶️ Start button
+    if st.button("▶️ Start Intro Text"):
+        egsa_intro_text_part_by_part(speed=speed)
+
+    st.markdown("---")
+
+
+# ==========================
+# SHOW LOGO + INTRO ON ALL PAGES
+# ==========================
+display_centered_animated_logo(width=240)
+show_global_intro()
+
+
+# ==========================
+# PAGES
+# ==========================
+if page == "Home":
     st.markdown(
         """
         <h1 style="
@@ -63,20 +172,19 @@ if page == "Home":
 
         <style>
         @keyframes colorChange {
-            0% { color: #16a34a; }   /* Green */
-            25% { color: #2563eb; }  /* Blue */
-            50% { color: #f59e0b; }  /* Orange */
-            75% { color: #d946ef; }  /* Purple */
-            100% { color: #16a34a; } /* Back to Green */
+            0% { color: #16a34a; }
+            25% { color: #2563eb; }
+            50% { color: #f59e0b; }
+            75% { color: #d946ef; }
+            100% { color: #16a34a; }
         }
         </style>
         """,
         unsafe_allow_html=True
     )
 
-# ---------- FINANCIAL STRATEGY ----------
+
 elif page == "Financial Strategy":
-    display_centered_logo()
     st.title("📘 Financial Strategy")
     st.write("""
 - Monthly Contribution  
@@ -86,9 +194,8 @@ elif page == "Financial Strategy":
 - Grain Buy and Sell Profit
 """)
 
-# ---------- LEADERSHIP HANDBOOK ----------
+
 elif page == "Leadership Handbook":
-    display_centered_logo()
     st.title("🔑 Be the Key, But the Solution Doesn’t Matter")
 
     with st.expander("Chapter 1: Initiative Is Leadership"):
@@ -140,9 +247,8 @@ elif page == "Leadership Handbook":
             "ተፅዕኖ ቁጥር ብቻ አይደለም። እርምጃዎች፣ ትምህርት፣ እምነት፣ ተነሳሽነት፣ እና መተባበር ለእድገት አስፈላጊ መለኪያዎች ናቸው።"
         )
 
-# ---------- STRATEGIC ACTION PLAN ----------
+
 elif page == "Strategic Action Plan":
-    display_centered_logo()
     st.title("📄 EGSA Internal Strategic Action Plan (2025–2027)")
 
     st.markdown("**Prepared by:** Founder & Executive Director  \n**Location:** Sheger City  \n**Date:** October 31, 2025")
@@ -216,9 +322,8 @@ digital transformation, and sustainable community impact. Effective implementati
 commitment, transparency, and continuous innovation across all levels of the association."""
         )
 
-# ---------- MEMBER BENEFITS ----------
+
 elif page == "Member Benefits":
-    display_centered_logo()
     st.title("🤝 Member Benefits")
     st.write("""
 EGSA members enjoy the following benefits:
@@ -231,9 +336,8 @@ EGSA members enjoy the following benefits:
 - **Social Impact Participation** – Contribute to projects in education, health, housing, and agriculture.
 """)
 
-# ---------- HOW IT WORKS ----------
+
 elif page == "How It Works":
-    display_centered_logo()
     st.title("⚙️ How It Works")
     st.write("""
 EGSA operates through a simple, member-driven process:
@@ -247,9 +351,8 @@ EGSA operates through a simple, member-driven process:
 7. **Grow Together** – Collective action and shared responsibility ensure sustainable growth and benefits for all members.
 """)
 
-# ---------- JOIN EGSA2025 ----------
+
 elif page == "Join EGSA2025":
-    display_centered_logo()
     st.title("📩 Join EGSA2025")
     st.write("""
 You can join EGSA2025 or contact us via:  
@@ -257,6 +360,3 @@ You can join EGSA2025 or contact us via:
 **Phone:** +251912861288  
 **Email:** walfanamegersa3@gmail.com
 """)
-
-
-
