@@ -8,8 +8,13 @@ import time
 # ==========================
 st.set_page_config(page_title="EGSA2025 PLC", layout="wide")
 
-LOGO_URL = "https://github.com/Walfaanaa/EGSA/raw/main/EGSA.png"
-AUDIO_URL = "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"  # Replace later with your EGSA audio
+# ==========================
+# FILE LINKS (RAW GitHub)
+# ==========================
+LOGO_URL = "https://raw.githubusercontent.com/Walfaanaa/EGSA/main/EGSA.png"
+
+# ✅ Your GitHub MP3 (RAW link)
+AUDIO_URL = "https://raw.githubusercontent.com/Walfaanaa/EGSA/main/page_1.mp3"
 
 
 # ==========================
@@ -135,14 +140,11 @@ def show_global_intro():
         unsafe_allow_html=True
     )
 
-    # 🎵 Audio player
-    st.audio(AUDIO_URL)
-
-    # Speed control (optional)
     speed = st.slider("⏱️ Text Speed (seconds per line)", 1.0, 5.0, 2.5, 0.5)
 
-    # ▶️ Start button
-    if st.button("▶️ Start Intro Text"):
+    # ✅ One button: Audio + Text
+    if st.button("▶️ Start Intro (Audio + Text)"):
+        st.audio(AUDIO_URL, format="audio/mp3")
         egsa_intro_text_part_by_part(speed=speed)
 
     st.markdown("---")
@@ -215,6 +217,7 @@ elif page == "Leadership Handbook":
             "Action": ["Small", "Consistent", "Collective"],
             "Impact": [1, 4, 8]
         })
+
         chart = (
             alt.Chart(data)
             .mark_bar()
@@ -223,7 +226,9 @@ elif page == "Leadership Handbook":
                 y="Impact"
             )
         )
+
         st.altair_chart(chart, use_container_width=True)
+
         st.write(
             "Even small consistent actions can create major impact. "
             "ትንሽ የቀጥታ እርምጃዎች ትልቅ ተፅዕኖ ማፍጠር ይችላሉ።"
