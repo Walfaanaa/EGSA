@@ -194,7 +194,7 @@ elif page == "Financial Strategy":
 - Service Charge Collected  
 - Uqub Pick Sold  
 - Grain Buy and Sell Profit
--Interest from loan
+- Interest from loan
 """)
 
 
@@ -366,4 +366,5 @@ You can join EGSA2025 or contact us via:
 **Phone:** +251912861288  
 **Email:** walfanamegersa3@gmail.com
 """)
+
 
